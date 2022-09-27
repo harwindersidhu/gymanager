@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Booking(props) {
   return (
-    <nav>
+    <div>
       I am a booking component
-    </nav>
+    </div>
   );
 }

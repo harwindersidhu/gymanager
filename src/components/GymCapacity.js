@@ -2,8 +2,8 @@ import React from "react";
 
 export default function GymCapacity(props) {
   return (
-    <nav>
+    <div>
       I am a gym capacity component
-    </nav>
+    </div>
   );
 }

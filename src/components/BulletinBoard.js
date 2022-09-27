@@ -2,8 +2,8 @@ import React from "react";
 
 export default function BulletinBoard(props) {
   return (
-    <nav>
+    <div>
       I am a bulletin board component
-    </nav>
+    </div>
   );
 }
