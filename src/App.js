@@ -1,11 +1,16 @@
 import './App.css';
+import Booking from './components/Booking';
+import BulletinBoard from './components/BulletinBoard';
+import GymCapacity from './components/GymCapacity';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Learn React
-      </header>
+      <Navigation />
+      <BulletinBoard />
+      <GymCapacity />
+      <Booking />
     </div>
   );
 }
