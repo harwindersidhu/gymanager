@@ -8,8 +8,8 @@ export default function Navigation(props) {
 
       <div className="nav-bar">
         <ul className="nav-bar-left">
-          <li>Gym Capacity</li>
-          <li>Book</li>
+          <li onClick={() => props.onChange("gym capacity")}>Gym Capacity</li>
+          <li onClick={() => props.onChange("book")}>Book</li>
         </ul>
         <div className="nav-bar-right">
           <div className="login--register">

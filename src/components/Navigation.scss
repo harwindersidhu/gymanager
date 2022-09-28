@@ -32,6 +32,12 @@ nav {
 
     li {
       margin: 1em;
+
+      &:hover {
+        // background-color: #ee5253;
+        cursor: pointer;
+        color: #222f3e;
+      }
     }
   }
 
