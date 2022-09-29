@@ -1,6 +1,6 @@
 import React from "react";
 import "./Booking.scss"
-import BulletinBoard from "./BulletinBoard";
+import BulletinBoard from "../component_bulletin/BulletinBoard";
 
 export default function Booking(props) {
   return (

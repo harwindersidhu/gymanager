@@ -1,6 +1,6 @@
 import './App.css';
-import Booking from './components/Booking';
-import GymCapacity from './components/GymCapacity';
+import Booking from './components/component_booking/Booking';
+import GymCapacity from './components/component_capacity/GymCapacity';
 import Navigation from './components/Navigation';
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
