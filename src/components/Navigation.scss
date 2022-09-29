@@ -8,13 +8,14 @@ nav {
   align-items: center;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  color: white;
 
   button {
     margin-right: 1.5em;
   }
 
   .nav-bar {
-    width: 90%;
+    width: 90vw;
   }
 
   .nav-bar,
@@ -33,16 +34,16 @@ nav {
     li {
       margin: 1em;
 
-      &:hover {
-        // background-color: #ee5253;
-        cursor: pointer;
-        color: #222f3e;
+      a {
+        text-decoration: none;
+        color: white;
       }
+
     }
   }
 
   .nav-bar-right {
-    width: 15%;
+    width: 15vw;
   }
 
   .login--register {
