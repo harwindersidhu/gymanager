@@ -1,7 +1,10 @@
+.book-view {
+  display: flex;
+}
+
 .book {
   margin-top: 120px;
-  float: left;
-  width: 60vw;
+  width: 65%;
   padding-left: 1.5em;
   padding-right: 1.5em;
   border: 2px solid black;
