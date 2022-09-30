@@ -1,11 +1,13 @@
 .capacity-view {
   display: flex;
+  
+  // height: 100%;
 }
 
 .gym-capacity {
   display: flex;
-  flex-direction: column;
   margin-top: 120px;
+  flex-direction: column;
   width: 65%;
   border: 2px solid black;
 }
@@ -13,9 +15,10 @@
 .row-one {
   padding: 1.5em;
   border-bottom: 2px solid black;
+  height: 65%;
 }
 
 .row-two {
   padding: 1.5em;
+  height: 35%;
 }
-

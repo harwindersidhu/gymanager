@@ -2,6 +2,7 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+
 const data = {
   labels: ['Filled', 'Remaining'],
   datasets: [
@@ -23,7 +24,6 @@ const data = {
 export default function GraphPresentHour(props) {
   return (
     <div className="graph-present-hour">
-      {/* <Doughnut data={data} /> */}
       <Doughnut data={data}/>
     </div>
   );

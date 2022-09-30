@@ -1,5 +1,6 @@
 .graphs-view {
   display: flex;
+  height: 100%;
 }
 
 .select-view {
@@ -8,4 +9,10 @@
 
 .graph {
   width: 80%;
+  justify-content: center;
+}
+
+.graph-present-hour {
+  width: fit-content;
+  margin: 0 auto;
 }
