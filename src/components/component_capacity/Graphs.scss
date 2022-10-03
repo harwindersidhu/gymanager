@@ -1,11 +1,27 @@
 .graphs-view {
   display: flex;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.select-view {
-  width: 20%;
+.graph-one {
+  width: 30%;
+  // justify-content: center;
 }
 
-.graph {
-  width: 80%;
+.graph-two {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.graph-present-hour {
+  width: 20vw;
+}
+
+.graph-present-day {
+  width: 30vw;
+  // height: 75vh;
 }
