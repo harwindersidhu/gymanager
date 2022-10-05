@@ -16,7 +16,7 @@ export default function useGraphData() {
   const today = todayDate();
   const [date, setDate] = useState(today);
 
-  const [presentHourData, setPresentHourData] = useState(40);
+  const [presentHourData, setPresentHourData] = useState(0);
 
   const initialDayData = {"7am": 0, "8am": 0, "9am": 0, "10am": 0, "11am": 0, "12pm": 0, "1pm": 0, "2pm": 0, "3pm": 0, "4pm": 0, "5pm": 0, "6pm": 0, "7pm": 0, "8pm": 0, "9pm": 0}
   const [presentDayData, setPresentDayData] = useState(initialDayData);
@@ -49,12 +49,35 @@ export default function useGraphData() {
     .catch((e) => {
       console.log("Promise error: ", e)
     })
-  }, [date]);
+  }, [date, presentHourData]);
+
+  function saveCapacity(time, numberOfPeople) {
+    const today = new Date();
+    const day = today.toLocaleDateString('en-US', {
+      weekday: 'long',
+    });
+    console.log("Form data to be saved: ", date, day, time, numberOfPeople);
+
+    const capacityData = {
+      day: day,
+      date: todayDate(),
+      time: time,
+      number_of_people: numberOfPeople
+    };
+    
+    return axios.post(`/api/capacity`, capacityData)
+      .then((response) => {
+        console.log("Response from saving capacity: ", response.data.gymCapacity);
+        setPresentHourData(() => response.data.gymCapacity)
+      })
+      .catch((e) => console.log("Error while saving capacity: ", e));
+  }
 
   return {
     date,
     setDate,
     presentHourData,
-    presentDayData
+    presentDayData,
+    saveCapacity
   };
 } 

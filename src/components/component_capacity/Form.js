@@ -8,6 +8,8 @@ export default function Form(props) {
 
   function saveCapacityData() {
     props.onSave(time, numberOfPeople);
+    setTime("");
+    setNumberOfPeople("")
   }
 
   return (
@@ -20,6 +22,7 @@ export default function Form(props) {
             className="time-input"
             name="time"
             type="text"
+            value={time}
             placeholder="Time"
             onChange={(event) => setTime(event.target.value)}
           />
@@ -31,6 +34,7 @@ export default function Form(props) {
             className="number-of-people-input"
             name="number-of-people"
             type="number"
+            value={numberOfPeople}
             placeholder="Number of People"
             onChange={(event) => setNumberOfPeople(event.target.value)}
           />
