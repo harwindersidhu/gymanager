@@ -12,6 +12,7 @@ console.log('days after extracting values DayList as received', days);
         <Day
           key={day.id}
           name={day.name}
+          setDay={() => props.onChange(day.name)}
         />
       </li>
       )

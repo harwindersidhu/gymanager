@@ -10,6 +10,7 @@ export default function Booking(props) {
 
   const {
     state,
+    setDay,
     cancelBooking
   } = useApplicationData();
 
@@ -18,10 +19,10 @@ export default function Booking(props) {
     <div className="booking-view">
       <div className="facility-booking">
         <div className="days-view">
-          <DayList days={state.days}/>
+          <DayList days={state.days} onChange={setDay}/>
         </div>
         <div className="schedule-view">
-          <ScheduleList bookings={state.bookings} onChange={cancelBooking}/>
+          <ScheduleList bookings={state.filteredBookings} onChange={cancelBooking}/>
         </div>
       </div>
       <BulletinBoard />
