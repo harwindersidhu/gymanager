@@ -1,11 +1,89 @@
-.book-view {
+
+
+.booking-view {
   display: flex;
+  align-items: stretch;
+  background-color: #e5dada;
+  font-size: 1.75rem;
+  font-family: 'Roboto', sans-serif;
+  justify-content: space-between;
 }
 
-.book {
-  margin-top: 120px;
-  width: 65%;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+.facility-booking {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
   border: 2px solid black;
+  margin-top: 120px;
 }
+
+.days-view {
+  margin: 0.25rem;
+  width: 33%;
+  height: fit-content;
+}
+
+.schedule-view {
+  background-color: #e5dada;
+  width: 80%;
+  margin: 0.25rem;
+  height: inherit;
+  overflow: auto;
+}
+
+section.day-list {
+height: fit-content;
+align-items: fl;
+
+}
+
+button.day-item {
+  background-color: #002642;
+  color: #ffffff;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 0;
+  font-size: 1.5rem;
+  height: 5rem;
+  width: 20rem;
+  border-width: 2px;
+  border-style: solid;
+  align-items: center;
+
+}
+
+button.day-item:hover {
+  background-color: #e59500;
+
+}
+
+section.schedule-list {
+  height: fit-content;
+  align-items: center;
+
+}
+
+button.schedule-item {
+  background-color: #ffffff;
+  border-radius: 4px;
+  color: #002642;
+  border-color: #002642;
+  width: 95%;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  overflow: auto;
+  border-radius: 0.5rem;
+  border: 1;
+}
+
+button.schedule-item:hover {
+  background-color: #e59500;
+
+}
+
+li {
+  list-style-type: none;
+ }
