@@ -1,6 +1,14 @@
-import React from "react";
+import { PROPERTY_TYPES } from "@babel/types";
+import React, { useState } from "react";
 
-export default function Form() {
+export default function Form(props) {
+
+  const [time, setTime] = useState("");
+  const [numberOfPeople, setNumberOfPeople] = useState("");
+
+  function saveCapacityData() {
+    props.onSave(time, numberOfPeople);
+  }
 
   return (
     <div className="form-main-div">
@@ -13,6 +21,7 @@ export default function Form() {
             name="time"
             type="text"
             placeholder="Time"
+            onChange={(event) => setTime(event.target.value)}
           />
         </div>
 
@@ -21,8 +30,9 @@ export default function Form() {
           <input
             className="number-of-people-input"
             name="number-of-people"
-            type="text"
+            type="number"
             placeholder="Number of People"
+            onChange={(event) => setNumberOfPeople(event.target.value)}
           />
         </div>
 
@@ -30,6 +40,7 @@ export default function Form() {
 
       <button
         className="form-button"
+        onClick={saveCapacityData}
       >Submit</button>
     </div>
   );
