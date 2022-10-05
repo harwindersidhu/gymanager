@@ -29,11 +29,18 @@ export default function useApplicationData(props) {
     console.log('state after setState', state)
  }
 
-  function cancelBooking(id) {
+  function cancelBooking(id) {//deleted row is unable to remove from filtered object
+    console.log('id received inside cancelBooking', id)
+    console.log('state inside cancel booking', state)
     return axios.delete(`/api/booking/delete/${id}`).then(() => {
-      const bookings = state.bookings;
-      delete bookings[id]; //ensuring data with similar id is deleted before new is added on it to
-      setState(prev => ({ ...prev, bookings })) //setting local state to null
+      console.log("state for possible filter", state)
+      const filteredBookings = state.filteredBookings.filter( item => {
+        return item.id !== id;
+      });
+      console.log("new filtered bookings", filteredBookings)
+      //delete filteredBookings[id]; //ensuring data with similar id is deleted before new is added on it to
+      setState(prev => ({ ...prev, filteredBookings})) //setting local state to null
+      console.log("state after setting filtered Bookings", state)
     })
   }
 
