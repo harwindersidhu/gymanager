@@ -2,7 +2,11 @@ import React from "react";
 import Schedule from "./Schedule";
 
 export default function ScheduleList (props) {
-  const scheduleItem = props.bookings.map(
+
+  console.log('prpos inside ScheduleList as received', props);
+const bookings = Object.values(props.bookings)
+console.log('schedule after extracting values DayList as received', bookings);
+  const scheduleItem = bookings.map(
     booking => {
       return (<li>
         <Schedule

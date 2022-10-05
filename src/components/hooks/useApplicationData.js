@@ -5,19 +5,27 @@ export default function useApplicationData(props) {
   
   const [state, setState] = useState({ 
     days: [],
-    bookings:[]
+    bookings: []
   });
 
-  console.log(state)
+  console.log('initial state',state)
 
   function cancelBooking(id) {
-    console.log("inside cancelBooking")
-    const booking = {
-      ...state.bookings[id]
-    };
+    // console.log("inside cancelBooking")
+    // const booking = {
+    //   ...state.bookings[id]
+    // };
+    // console.log("local booking");
+    // const bookings = {
+    //   ...state.bookings,
+    //   [id]: booking
+    //};
+    console.log("local bookings");
 console.log("before axios call");
     return axios.delete(`/api/booking/delete/${id}`).then(() => {
-      setState({ ...state, booking }) //setting local state to null
+      const bookings = state.bookings;
+      delete bookings[id];
+      setState(prev => ({ ...prev, bookings })) //setting local state to null
     })
   }
 
@@ -27,7 +35,7 @@ console.log("before axios call");
     };
 
     return axios.post(`/api/booking/${id}`).then(() => {
-      setState({ ...state, booking }) //setting local state to null
+      setState({ ...state, booking }) //setting local state to null //prev
     })
   }
 
@@ -38,11 +46,14 @@ console.log("before axios call");
       .then((all) => {
         const days = all[0].data
         const bookings = all[1].data;
+        console.log("days after fetching", days);
+        console.log("bookings after fetching", bookings);
         setState(prev => ({ ...prev, days, bookings}));
       });
-
   }, []); 
 
+console.log('after axios days', state.days)
+console.log('after axios bookings', state.bookings)
 
 
   return {
