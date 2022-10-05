@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import axios from "axios";
+import axios from "axios";
 
 export default function useGraphData() {
 
@@ -18,10 +18,38 @@ export default function useGraphData() {
 
   const [presentHourData, setPresentHourData] = useState(40);
 
-  const [presentDayData, setPresentDayData] = useState({
-    "7am": 38, "8am": 38, "9am": 35, "10am": 25, "11am": 20, "12pm": 20, "1pm": 16, "2pm": 26, "3pm": 30, "4pm": 40, "5pm": 50, "6pm": 10, "7pm": 10, "8pm": 10, "9pm": 10
-  })
-  //const labels = ['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'];
+  const initialDayData = {"7am": 0, "8am": 0, "9am": 0, "10am": 0, "11am": 0, "12pm": 0, "1pm": 0, "2pm": 0, "3pm": 0, "4pm": 0, "5pm": 0, "6pm": 0, "7pm": 0, "8pm": 0, "9pm": 0}
+  const [presentDayData, setPresentDayData] = useState(initialDayData);
+
+  useEffect(() => {
+    const lastUpdate = `/api/capacity/lastUpdate`;
+    const getSpecificDateData = `/api/capacity/${date}`;
+
+    Promise.all([
+      axios.get(lastUpdate),
+      axios.get(getSpecificDateData)
+    ]).then((all) => {
+      setPresentHourData(() => all[0].data);
+      setPresentDayData(() => initialDayData);
+      const gymCapacityArray = all[1].data.gymCapacity;
+      for (const obj of gymCapacityArray) {
+        const key = obj.time;
+        const value = obj.number_of_people;
+        // setPresentDayData({
+        //   ...presentDayData,
+        //   key: value 
+        // })
+        setPresentDayData( prev => {
+          let dataObj = { ...prev };
+          dataObj[key] = value;
+          return dataObj;
+        })
+      }
+    })
+    .catch((e) => {
+      console.log("Promise error: ", e)
+    })
+  }, [date]);
 
   return {
     date,
