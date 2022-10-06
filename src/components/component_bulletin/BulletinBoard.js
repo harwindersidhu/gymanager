@@ -1,5 +1,6 @@
 import React from "react";
 import Bulletin from "./Bulletin";
+import BulletinForm from "./BulletinForm";
 import "./BulletinBoard.scss";
 import useBulletinBoardData from "../../hooks/useBulletinBoardData";
 import { format } from 'timeago.js';
@@ -21,7 +22,13 @@ export default function BulletinBoard(props) {
 
   return (
     <div className="bulletin-board">
-      {bulletinItems}
+      <div className="bulletin-items-container">
+        {bulletinItems}
+      </div>
+      <BulletinForm />
+      {/* <div className="bulletin-form">
+        <BulletinForm />
+      </div> */}
     </div>
   );
 }
