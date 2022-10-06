@@ -53,8 +53,14 @@ export default function useApplicationData(props) {
     console.log("after toggle", state)
   }
 
-  function saveBooking(obj) {
-    console.log('from inside useApplication', obj)
+  function saveBooking(newBooking) {
+    console.log('from inside useApplication', newBooking);
+    return axios
+    .post(`/api/booking/create`, newBooking)
+    .then( res => {
+        console.log('response from post req', res)
+        //setState(prev => ({...prev}))
+        });
   }
 
 function viewSchedule(){
@@ -70,7 +76,7 @@ function viewSchedule(){
       axios.get('/api/booking/')])
       .then((all) => {
         const days = all[0].data
-        const bookings = all[1].data;
+        const bookings = all[1].data
         // console.log("days after fetching", days);
         // console.log("bookings after fetching", bookings);
         setState(prev => ({ ...prev, days, bookings}));

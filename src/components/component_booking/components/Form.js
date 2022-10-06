@@ -29,11 +29,10 @@ const onErrors = errors => console.error('errors form', errors);
             </td>
             <td>
             <select name="day" id="day" {...register("day", { required: true })}>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
             </select>
             </td>
           </tr>
@@ -57,8 +56,8 @@ const onErrors = errors => console.error('errors form', errors);
             </td>
             <td>
               <select name="room" id="location" {...register("room")} >
-                <option value="Multi-purpose Room - 1">Multi-purpose Room - 1</option>
-                <option value="Multi-purpose Room - 2">Multi-purpose Room - 2</option>
+                <option value="1">Multi-purpose Room - 1</option>
+                <option value="2">Multi-purpose Room - 2</option>
               </select>
               </td>
           </tr>
