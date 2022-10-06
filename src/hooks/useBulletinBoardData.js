@@ -33,8 +33,28 @@ export default function useBulletinBoardData() {
     })
   }, []);
 
+  function saveBulletin(title, description) {
+
+    const bulletinData = {
+      title: title,
+      description: description,
+      created_at: todayDate()
+    };
+    
+    return axios.post(`/api/bulletinboard`, bulletinData)
+      .then((response) => {
+        setBulletinData((prev) => {
+          const updatedData = [...prev];
+          updatedData.push(response.data.stories);
+          return updatedData;
+        })
+      })
+      .catch((e) => console.log("Error while saving bulletin: ", e));
+  }
+
   return {
     today,
-    bulletinData
+    bulletinData,
+    saveBulletin
   };
 } 

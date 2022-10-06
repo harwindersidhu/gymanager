@@ -7,14 +7,9 @@ import { format } from 'timeago.js';
 
 export default function BulletinBoard(props) {
 
-  const { today, bulletinData } = useBulletinBoardData();
+  const { bulletinData, saveBulletin } = useBulletinBoardData();
 
-  //var today = new Date();
-  // console.log("Bulletin data: ", bulletinData)
-  // console.log("Today: ", today, format(today));
-  // console.log("Time ago: ", format('2022-10-05 19:30:55'));
-
-  const bulletinItems = bulletinData.map((bulletin) => {
+  const bulletinItems = bulletinData.slice().reverse().map((bulletin) => {
     return (
       <Bulletin key={bulletin.id} title={bulletin.title} description={bulletin.description} time={format(bulletin.created_at)} />
     );
@@ -25,10 +20,7 @@ export default function BulletinBoard(props) {
       <div className="bulletin-items-container">
         {bulletinItems}
       </div>
-      <BulletinForm />
-      {/* <div className="bulletin-form">
-        <BulletinForm />
-      </div> */}
+      <BulletinForm onSave={(title, description) => saveBulletin(title, description)}/>
     </div>
   );
 }

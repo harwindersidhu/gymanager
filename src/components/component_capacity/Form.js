@@ -9,7 +9,7 @@ export default function Form(props) {
   function saveCapacityData() {
     props.onSave(time, numberOfPeople);
     setTime("");
-    setNumberOfPeople("")
+    setNumberOfPeople("");
   }
 
   return (

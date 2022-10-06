@@ -2,14 +2,15 @@ import React, { useState } from "react";
 
 export default function BulletinForm(props) {
 
-  // const [time, setTime] = useState("");
-  // const [numberOfPeople, setNumberOfPeople] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
-  // function saveCapacityData() {
-  //   props.onSave(time, numberOfPeople);
-  //   setTime("");
-  //   setNumberOfPeople("")
-  // }
+  function saveBulletinData() {
+    //console.log("Bulletin Form data: ", title, description);
+    props.onSave(title, description);
+    setTitle("");
+    setDescription("");
+  }
 
   return (
     <div className="bulletin-form-main-div">
@@ -21,19 +22,28 @@ export default function BulletinForm(props) {
             className="bulletin-form-title-input"
             name="title"
             type="text"
+            value={title}
             placeholder="Title"
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
 
         <div className="description-div">
           <label className="description-label">Description </label>
-          <textarea className="description-textarea" name="description" placeholder="Description"></textarea>
+          <textarea
+            className="description-textarea"
+            name="description"
+            value={description}
+            placeholder="Description"
+            onChange={(e) => setDescription(e.target.value)}>
+          </textarea>
         </div>
 
       </form>
 
       <button
         className="bulletin-form-button"
+        onClick={saveBulletinData}
       >Submit</button>
     </div>
   );
