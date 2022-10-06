@@ -12,7 +12,7 @@ export default function useBulletinBoardData() {
     var min = today.getMinutes();
     var sec = today.getSeconds();
 
-    today = yyyy + '-' + mm + '-' + dd + ' ' +hh + ':' + min + ':' + sec;
+    today = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + min + ':' + sec;
     return today;
   }
 
@@ -28,9 +28,9 @@ export default function useBulletinBoardData() {
     ]).then((all) => {
       setBulletinData(() => all[0].data.stories);
     })
-    .catch((e) => {
-      console.log("Promise error: ", e)
-    })
+      .catch((e) => {
+        console.log("Promise error: ", e)
+      })
   }, []);
 
   function saveBulletin(title, description) {
@@ -40,7 +40,7 @@ export default function useBulletinBoardData() {
       description: description,
       created_at: todayDate()
     };
-    
+
     return axios.post(`/api/bulletinboard`, bulletinData)
       .then((response) => {
         setBulletinData((prev) => {
@@ -52,9 +52,27 @@ export default function useBulletinBoardData() {
       .catch((e) => console.log("Error while saving bulletin: ", e));
   }
 
+  function editStatusOfBulletin(id, index) {
+    //console.log("Id and index are: ", id, index);
+    const bulletinId = {
+      id: id
+    };
+
+    return axios.put(`/api/bulletinboard`, bulletinId)
+      .then((response) => {
+        setBulletinData((prev) => {
+          const updatedData = [...prev];
+          updatedData.splice(index, 1); //Remove item from specified index
+          return updatedData;
+        })
+      })
+      .catch((e) => console.log("Error while saving bulletin: ", e));
+  }
+
   return {
     today,
     bulletinData,
-    saveBulletin
+    saveBulletin,
+    editStatusOfBulletin
   };
 } 

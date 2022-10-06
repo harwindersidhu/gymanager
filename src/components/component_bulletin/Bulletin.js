@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Bulletin(props) {
+
   return (
     <article className="bulletin">
       <header className="bulletin--header">
@@ -13,7 +14,7 @@ export default function Bulletin(props) {
 
       <footer className="bulletin--footer">
         <label className="bulletin--age">{props.time}</label>
-        <button className="bulletin-delete">Delete</button>
+        <button className="bulletin-delete" onClick={props.onDelete}>Delete</button>
       </footer>
     </article>
   );
