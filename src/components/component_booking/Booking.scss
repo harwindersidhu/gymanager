@@ -7,37 +7,37 @@
   font-size: 1.5rem;
   font-family: 'Roboto', sans-serif;
   justify-content: space-between;
+  overflow: auto;
+
 }
 
 .facility-booking {
   display: flex;
   flex: 1;
   flex-direction: row;
-  border: 2px solid black;
   height: auto;
 }
 
 .days-view {
-  margin: 0.25rem;
   width: 33%;
   height: fit-content;
+  
 }
 
 .schedule-view {
   background-color: #e5dada;
   width: 80%;
-  margin: 0.25rem;
   height: inherit;
   overflow: auto;
 }
 
 section.day-list {
 height: fit-content;
-align-items: fl;
+align-items:flex-start;
 
 }
 
-button.createBooking {
+button.large {
   background-color: #840032;
   color: #ffffff;
   padding: 0.25rem;
@@ -53,7 +53,7 @@ button.createBooking {
   align-items: center;
 }
 
-button.createBooking:hover {
+button.large:hover {
   background-color: #e59500;
 }
 
@@ -96,6 +96,7 @@ section.schedule-list {
   overflow: auto;
   border-radius: 0.5rem;
   border: 1;
+  
 }
 
 h3 {
@@ -114,12 +115,6 @@ button.schedule-item.cancel {
   padding: 0.5rem;
 }
 
-button.schedule-item.create {
-  background-color: green;
-  color: #ffffff;
-  width: fit-content;
-  padding: 0.5rem;
-}
 
 button.schedule-item:hover {
   background-color: #e59500;
@@ -134,3 +129,63 @@ button.schedule-item:hover {
 li {
   list-style-type: none;
  }
+
+.create-booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: solid;
+  color: #002642;
+  border-color: #002642;
+  width: 85%;
+  margin: 0.35rem;
+  border-radius: 0.5rem;
+  border: 1;
+  padding: 2rem;
+  align-items: center;
+}
+
+form {
+  
+}
+
+input {
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  height: fit-content;
+}
+
+option {
+  width:300px;
+  width: 3rem;
+}
+
+label {
+  font-size: large;
+}
+
+button.create-booking {
+  background-color: #840032;
+  color: #ffffff;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 0;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 15rem;
+  border-width: 2px;
+  border-style: solid;
+  align-items: center;
+
+}
+
+button.create-booking:hover {
+  background-color: #e59500;
+}

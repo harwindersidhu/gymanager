@@ -7,10 +7,13 @@ export default function Form(props) {
   console.log(errors);
 
   return (
-    <section className="create-booking">
+    <div className="create-booking">
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="Customer Name" {...register("Customer Name", {required: true, max: 30, min: 1})} />
-      <select {...register("Day", { required: true })}>
+      <label for="customer-name">Customer Name: </label>
+      <input name="customer-name" type="text" placeholder="Customer Name" {...register("Customer Name", {required: true, max: 30, min: 1})} />
+      <br />
+      <label for="day">Select day: </label>
+      <select name="day" {...register("Day", { required: true })}>
         <option value="Monday">Monday</option>
         <option value="Tuesday">Tuesday</option>
         <option value="Wednesday">Wednesday</option>
@@ -18,7 +21,8 @@ export default function Form(props) {
         <option value="Friday">Friday</option>
       </select>
       <br />
-      <select {...register("Time Slot")}>
+      <label for="time-slot">Select time slot: </label>
+      <select name="time-slot" {...register("Time Slot")}>
         <option value="1pm">1pm</option>
         <option value="2pm">2pm</option>
         <option value="3pm">3pm</option>
@@ -26,12 +30,13 @@ export default function Form(props) {
         <option value="5pm">5pm</option>
       </select>
       <br />
-      <select {...register("Facility Name")}>
-        <option value="Multi-purpose Room">1pm</option>
+      <label for="location">Select location: </label>
+      <select name="location" {...register("Facility Name")}>
+        <option value="Multi-purpose Room">Multi-purpose Room</option>
         </select>
         <br />
-      <input type="submit" onChange={(event) => props.createBooking(event.target.value)}/>
+      <button className="create-booking" type="submit" onChange={(event) => props.createBooking(event.target.value)}>Save Booking</button>
     </form>
-    </section > 
+    </div > 
   );
 }
