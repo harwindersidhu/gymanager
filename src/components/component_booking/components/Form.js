@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Error from '../Error';
 
 export default function Form(props) {
    const { register, handleSubmit, formState: { errors } } = useForm();
@@ -18,7 +19,8 @@ const onErrors = errors => console.error('errors form', errors);
               <label htmlFor="customer-name">Customer Name: </label>
             </td>
             <td>
-              <input name="user" id="customer-name" type="text" placeholder="Customer Name" {...register("user", { required: "Cannot submit empty field", max: 30, min: 1 })} />
+              <input name="user" id="customer-name" type="text" placeholder="Customer Name" {...register("user", { required: "Error: Cannot submit empty field", max: 30, min: 1 })} />
+              {errors?.user && <Error message={errors.user.message}></Error>} 
             </td>
           </tr>
           <tr>
@@ -62,7 +64,7 @@ const onErrors = errors => console.error('errors form', errors);
           </tr>
           </tbody>
         </table> 
-        {errors?.name && errors.name.message}      
+         
         <button className="create-booking" type="submit">Save</button>
       </form>
     </div >
