@@ -12,7 +12,8 @@ export default function Bulletin(props) {
       </div>
 
       <footer className="bulletin--footer">
-            <button className="bulletin-delete">Delete</button>
+        <label className="bulletin--age">{props.time}</label>
+        <button className="bulletin-delete">Delete</button>
       </footer>
     </article>
   );

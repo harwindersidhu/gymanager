@@ -1,23 +1,21 @@
 import React from "react";
 import Bulletin from "./Bulletin";
-import "./BulletinBoard.scss"
+import "./BulletinBoard.scss";
+import useBulletinBoardData from "../../hooks/useBulletinBoardData";
+import { format } from 'timeago.js';
 
 export default function BulletinBoard(props) {
 
-  const bulletins = [
-    {
-      title: "Title One",
-      description: "Description One"
-    },
-    {
-      title: "Title Two",
-      description: "Description Two"
-    }
-  ];
+  const { today, bulletinData } = useBulletinBoardData();
 
-  const bulletinItems = bulletins.map((bulletin) => {
+  //var today = new Date();
+  // console.log("Bulletin data: ", bulletinData)
+  // console.log("Today: ", today, format(today));
+  // console.log("Time ago: ", format('2022-10-05 19:30:55'));
+
+  const bulletinItems = bulletinData.map((bulletin) => {
     return (
-      <Bulletin title={bulletin.title} description={bulletin.description} />
+      <Bulletin key={bulletin.id} title={bulletin.title} description={bulletin.description} time={format(bulletin.created_at)} />
     );
   });
 
