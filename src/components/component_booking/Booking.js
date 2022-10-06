@@ -30,7 +30,7 @@ export default function Booking(props) {
         </div>
         <div className="schedule-view">
          { !state.bookingMode && <ScheduleList bookings={state.filteredBookings} onChange={cancelBooking}/>}
-         { state.bookingMode && <Form />}
+         { state.bookingMode && <Form onSubmit={saveBooking}/>}
         </div>
       </div>
       <BulletinBoard />

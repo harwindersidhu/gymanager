@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function Form(props) {
-   const { register } = useForm();
+   const { register, handleSubmit, formState: { errors } } = useForm();
 
+const onFormSubmit  = data => { console.log('inside Form data', data); props.onSubmit(data)}
+const onErrors = errors => console.error('errors form', errors);
 
-  const [user, setUser] = useState("");
-  const [room, setRoom] = useState("");
-  const [time, setTime] = useState("");
-  const [day, setDay] = useState("");
-
-
-  function createLocalState() {
-    let bookingObject = {user: user, room: room, time: time, day: day}
-    console.log('from inside form ',bookingObject)
-    props.saveBooking(bookingObject);
-    setTime("");
-    setRoom("");
-    setUser("");
-    setDay("");
-  }
 
   return (
     <div className="create-booking">
-      <form onSubmit={event => event.preventDefault()}>
+      <form onSubmit={handleSubmit(onFormSubmit, onErrors )}>
         <table>
         <tbody>
           <tr>
@@ -31,7 +18,7 @@ export default function Form(props) {
               <label htmlFor="customer-name">Customer Name: </label>
             </td>
             <td>
-              <input name="customer-name" id="customer-name" type="text" placeholder="Customer Name" {...register("Customer Name", { required: true, max: 30, min: 1 })} onChange={(e) => setUser(e.target.value)}/>
+              <input name="user" id="customer-name" type="text" placeholder="Customer Name" {...register("user", { required: "Cannot submit empty field", max: 30, min: 1 })} />
             </td>
           </tr>
           <tr>
@@ -39,7 +26,7 @@ export default function Form(props) {
               <label htmlFor="day">Select day: </label>
             </td>
             <td>
-            <select name="day" id="day" {...register("Day", { required: true })} onClick={(e) => setDay(e.target.value)}>
+            <select name="day" id="day" {...register("day", { required: true })}>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
               <option value="Wednesday">Wednesday</option>
@@ -53,7 +40,7 @@ export default function Form(props) {
               <label htmlFor="time-slot">Select time slot: </label>
             </td>
             <td>
-            <select name="time-slot" id="time-slot" {...register("Time Slot")} onClick={(e) => setTime(e.target.value)}>
+            <select name="time" id="time-slot" {...register("time")} >
               <option value="1pm">1pm</option>
               <option value="2pm">2pm</option>
               <option value="3pm">3pm</option>
@@ -67,15 +54,16 @@ export default function Form(props) {
               <label htmlFor="location">Select location: </label>
             </td>
             <td>
-              <select name="location" id="location" {...register("Facility Name")} onClick={(e) => setRoom(e.target.value)}>
+              <select name="room" id="location" {...register("room")} >
                 <option value="Multi-purpose Room - 1">Multi-purpose Room - 1</option>
                 <option value="Multi-purpose Room - 2">Multi-purpose Room - 2</option>
               </select>
               </td>
           </tr>
           </tbody>
-        </table>       
-        <button className="create-booking" type="submit" onClick={createLocalState}>Save</button>
+        </table> 
+        {errors?.name && errors.name.message}      
+        <button className="create-booking" type="submit">Save</button>
       </form>
     </div >
   );
