@@ -32,9 +32,16 @@ export default function useApplicationData(props) {
       const filteredBookings = state.filteredBookings.filter( item => {
         return item.id !== id;
       });
-      console.log("new filtered bookings", filteredBookings)
+      const bookings = state.bookings.filter( item => {
+        return item.id !== id;
+      });
+      console.log('filtered bookings after filter', filteredBookings)
+      console.log('state before delete', state)
+      //delete state.filteredBookings;
+      //console.log('state after delete', state)
+      //console.log("new filtered bookings", filteredBookings)
       //delete filteredBookings[id]; //ensuring data with similar id is deleted before new is added on it to
-      setState(prev => ({ ...prev, filteredBookings})) //setting local state to null
+      setState(prev => ({ ...prev, bookings, filteredBookings})) //setting local state to null
       console.log("state after setting filtered Bookings", state)
     })
   }
@@ -45,7 +52,8 @@ export default function useApplicationData(props) {
     setState(prev => ({...prev}));
     console.log("after toggle", state)
   }
-function submitBooking(){
+
+function viewSchedule(){
   console.log("before submit toggle", state)
   state.bookingMode = !state.bookingMode;
   setState(prev => ({...prev}));
@@ -74,7 +82,7 @@ console.log('after axios day', state.day)
     setDay,
     cancelBooking,
     createBooking,
-    submitBooking
+    viewSchedule
   }
 
 }

@@ -17,6 +17,7 @@ export default function Form(props) {
         <option value="Thursday">Thursday</option>
         <option value="Friday">Friday</option>
       </select>
+      <br />
       <select {...register("Time Slot")}>
         <option value="1pm">1pm</option>
         <option value="2pm">2pm</option>
@@ -24,9 +25,11 @@ export default function Form(props) {
         <option value="4pm">4pm</option>
         <option value="5pm">5pm</option>
       </select>
+      <br />
       <select {...register("Facility Name")}>
         <option value="Multi-purpose Room">1pm</option>
         </select>
+        <br />
       <input type="submit" onChange={(event) => props.createBooking(event.target.value)}/>
     </form>
     </section > 

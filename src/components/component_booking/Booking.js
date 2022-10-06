@@ -15,7 +15,7 @@ export default function Booking(props) {
     setDay,
     cancelBooking,
     createBooking,
-    submitBooking
+    viewSchedule
   } = useApplicationData();
 
   return (
@@ -25,7 +25,7 @@ export default function Booking(props) {
         <div className="days-view">
           { !state.bookingMode && <DayList days={state.days} onChange={setDay}/> }
           { !state.bookingMode && <Button  name={"Create Booking"} onChange={createBooking}/>}
-          { state.bookingMode && <Button name={"Submit Booking"} onChange={submitBooking}/>}
+          { state.bookingMode && <Button name={"View Schedule"} onChange={viewSchedule}/>}
         </div>
         <div className="schedule-view">
          { !state.bookingMode && <ScheduleList bookings={state.filteredBookings} onChange={cancelBooking}/>}
