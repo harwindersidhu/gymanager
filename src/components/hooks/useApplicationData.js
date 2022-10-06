@@ -53,6 +53,10 @@ export default function useApplicationData(props) {
     console.log("after toggle", state)
   }
 
+  function saveBooking(obj) {
+    console.log('from inside useApplication', obj)
+  }
+
 function viewSchedule(){
   console.log("before submit toggle", state)
   state.bookingMode = !state.bookingMode;
@@ -82,7 +86,8 @@ console.log('after axios day', state.day)
     setDay,
     cancelBooking,
     createBooking,
-    viewSchedule
+    viewSchedule,
+    saveBooking
   }
 
 }

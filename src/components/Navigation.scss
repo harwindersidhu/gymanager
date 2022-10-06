@@ -1,6 +1,6 @@
 nav {
   width: auto;
-  height: 120px;
+  height: 10vh;
   background: #840032;
   display: flex;
   flex-direction: row;
@@ -8,7 +8,8 @@ nav {
   padding: 1rem;
   color: white;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
+  font-size: 7vh;
+
 
   button {
     margin-right: 1.5em;
@@ -16,6 +17,7 @@ nav {
 
   .nav-bar {
     width: 90vw;
+    padding: 1vh;;
   }
 
   .nav-bar,
@@ -31,13 +33,36 @@ nav {
       list-style-type: none;
     }
 
+
+    button {
+      width: fit-content;
+      padding: 0.5rem;
+      background-color: #ffffff;
+      border: solid;
+      color: #002642;
+      border-color: #002642;
+      width: 95%;
+      margin: 0.35vw;
+      text-align: center;
+      overflow: auto;
+      border-radius: 0.5rem;
+      border: 1;
+    }
+
+    button:hover {
+      background-color: #e59500;
+    }
+
     li {
-      margin: 1em;
+      margin: 0.5vw;
+      font-size: 2.75vh;
+      color: #ffffff;
 
       a {
         text-decoration: none;
         color: white;
       }
+
       a:hover {
         color: #e59500;
       }

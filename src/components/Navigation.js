@@ -20,7 +20,7 @@ export default function Navigation(props) {
             <button>Register</button>
           </div>
           <div className="login-logout">
-            <label>Admin</label>
+            <label>ADMIN</label>
             <button>LogOut</button>
           </div>
         </div>
