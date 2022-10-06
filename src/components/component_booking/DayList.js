@@ -8,7 +8,8 @@ const days = Object.values(props.days)
 console.log('days after extracting values DayList as received', days);
   const dayItem = days.map(
     day => {
-      return (<li>
+      return (
+      <li>
         <Day
           key={day.id}
           name={day.name}
@@ -19,11 +20,13 @@ console.log('days after extracting values DayList as received', days);
     }
   );
   return (
+    <>
       <section className="day-list">
         <h6>
           {dayItem}
         </h6>
       </section>
+      </>
   )
 };
 

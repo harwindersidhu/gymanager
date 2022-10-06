@@ -7,16 +7,11 @@ export default function useApplicationData(props) {
     day : "Monday",
     days: [],
     bookings: [],
-    filteredBookings: []
+    filteredBookings: [],
+    bookingMode: false
   });
 
-
-
-
-
  function setDay(day) {
-
-
    console.log("inside setDay")
    const bookingByDay = {...state.bookings};
     console.log('bookingByDay before setState', bookingByDay)
@@ -45,14 +40,17 @@ export default function useApplicationData(props) {
   }
 
   function createBooking(id) {
-    const booking = {
-      ...state.bookings[id]
-    };
-
-    return axios.post(`/api/booking/${id}`).then(() => {
-      setState({ ...state, booking }) //setting local state to null //prev
-    })
+    console.log("before toggle", state)
+    state.bookingMode = !state.bookingMode;
+    setState(prev => ({...prev}));
+    console.log("after toggle", state)
   }
+function submitBooking(){
+  console.log("before submit toggle", state)
+  state.bookingMode = !state.bookingMode;
+  setState(prev => ({...prev}));
+  console.log("after submit toggle", state)
+}
 
   useEffect(() => { //fetching data from API 
     Promise.all([
@@ -75,7 +73,8 @@ console.log('after axios day', state.day)
     state,
     setDay,
     cancelBooking,
-    createBooking
+    createBooking,
+    submitBooking
   }
 
 }

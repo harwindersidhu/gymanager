@@ -5,13 +5,17 @@ import useApplicationData from "../hooks/useApplicationData"
 
 import DayList from "./DayList";
 import ScheduleList from "./ScheduleList";
+import Button from "./components/Button"
+import Form from "./components/Form";
 
 export default function Booking(props) {
 
   const {
     state,
     setDay,
-    cancelBooking
+    cancelBooking,
+    createBooking,
+    submitBooking
   } = useApplicationData();
 
   return (
@@ -19,10 +23,13 @@ export default function Booking(props) {
     <div className="booking-view">
       <div className="facility-booking">
         <div className="days-view">
-          <DayList days={state.days} onChange={setDay}/>
+          { !state.bookingMode && <DayList days={state.days} onChange={setDay}/> }
+          { !state.bookingMode && <Button  name={"Create Booking"} onChange={createBooking}/>}
+          { state.bookingMode && <Button name={"Submit Booking"} onChange={submitBooking}/>}
         </div>
         <div className="schedule-view">
-          <ScheduleList bookings={state.filteredBookings} onChange={cancelBooking}/>
+         { !state.bookingMode && <ScheduleList bookings={state.filteredBookings} onChange={cancelBooking}/>}
+         { state.bookingMode && <Form />}
         </div>
       </div>
       <BulletinBoard />
