@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Bulletin from "./Bulletin";
 import BulletinForm from "./BulletinForm";
 import "./BulletinBoard.scss";
-import useBulletinBoardData from "../../hooks/useBulletinBoardData";
+//import useBulletinBoardData from "../../hooks/useBulletinBoardData";
 import { format } from 'timeago.js';
+
+import { bulletinBoardContext } from "../../providers/BulletinBoardProvider";
 
 export default function BulletinBoard(props) {
 
-  const { bulletinData, saveBulletin, editStatusOfBulletin } = useBulletinBoardData();
+  const { bulletinData, saveBulletin, editStatusOfBulletin } = useContext(bulletinBoardContext);
 
   const bulletinItems = bulletinData.slice().reverse().map((bulletin, index) => {
     return (
