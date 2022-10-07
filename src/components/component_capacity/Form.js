@@ -1,5 +1,5 @@
-// import { PROPERTY_TYPES } from "@babel/types";
 import React, { useState } from "react";
+import SelectType from "./SelectType";
 
 export default function Form(props) {
 
@@ -18,14 +18,15 @@ export default function Form(props) {
 
         <div className="time-div">
           <label className="time-label">Time: </label>
-          <input
+          {/* <input
             className="time-input"
             name="time"
             type="text"
             value={time}
             placeholder="Time"
             onChange={(event) => setTime(event.target.value)}
-          />
+          /> */}
+          <SelectType value={time} onChange={(val) => setTime(val)} />
         </div>
 
         <div className="number-of-people-div">

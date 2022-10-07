@@ -3,10 +3,9 @@ import { bulletinBoardContext } from "../../providers/BulletinBoardProvider";
 
 export default function BulletinForm() {
 
-  const { saveBulletin } = useContext(bulletinBoardContext);
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const { saveBulletin } = useContext(bulletinBoardContext);
 
   function saveBulletinData() {
     saveBulletin(title, description);
