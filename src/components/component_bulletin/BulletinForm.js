@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { bulletinBoardContext } from "../../providers/BulletinBoardProvider";
 
-export default function BulletinForm(props) {
+export default function BulletinForm() {
+
+  const { saveBulletin } = useContext(bulletinBoardContext);
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   function saveBulletinData() {
-    //console.log("Bulletin Form data: ", title, description);
-    props.onSave(title, description);
+    saveBulletin(title, description);
     setTitle("");
     setDescription("");
   }

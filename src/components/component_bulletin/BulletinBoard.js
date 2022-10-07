@@ -7,9 +7,9 @@ import { format } from 'timeago.js';
 
 import { bulletinBoardContext } from "../../providers/BulletinBoardProvider";
 
-export default function BulletinBoard(props) {
+export default function BulletinBoard() {
 
-  const { bulletinData, saveBulletin, editStatusOfBulletin } = useContext(bulletinBoardContext);
+  const { bulletinData, editStatusOfBulletin } = useContext(bulletinBoardContext);
 
   const bulletinItems = bulletinData.slice().reverse().map((bulletin, index) => {
     return (
@@ -22,7 +22,7 @@ export default function BulletinBoard(props) {
       <div className="bulletin-items-container">
         {bulletinItems}
       </div>
-      <BulletinForm onSave={(title, description) => saveBulletin(title, description)} />
+      <BulletinForm />
     </div>
   );
 }
