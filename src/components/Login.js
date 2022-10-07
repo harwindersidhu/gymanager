@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { loginContext } from "../providers/LoginProvider";
+import "./Login.scss";
 
-export default function Login() {
+export default function Login(props) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login, error, setError } = useContext(loginContext);
 
-  function login() {
-    console.log("Login Form data: ", email, password);
+  function onLogin() {
+    if (email === "" || password === "") {
+      setError("Fields can't be empty.");
+      return;
+    }
+    login(email, password);
     setEmail("");
     setPassword("");
   }
@@ -14,7 +21,7 @@ export default function Login() {
   return (
     <div className="login-form-main-div">
       <form autoComplete="off" onSubmit={event => event.preventDefault()}>
-
+        { error !== "" && <div>{error}</div>}
         <div className="email-div">
           <label className="email-label">Email: </label>
           <input
@@ -28,7 +35,7 @@ export default function Login() {
         </div>
 
         <div className="password-div">
-          <label className="password-label">Description </label>
+          <label className="password-label">Password: </label>
           <input
             className="password-input"
             name="password"
@@ -43,7 +50,7 @@ export default function Login() {
 
       <button
         className="login-form-button"
-        onClick={login}
+        onClick={onLogin}
       >Login</button>
     </div>
   );
