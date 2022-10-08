@@ -2,16 +2,12 @@ import React from "react";
 import Day from "./Day";
 
 export default function DayList(props) {
-
-console.log('prpos inside DayList as received', props);
 const days = Object.values(props.days)
-console.log('days after extracting values DayList as received', days);
   const dayItem = days.map(
     day => {
       return (
-      <li>
+      <li key={day.id}>
         <Day
-          key={day.id}
           name={day.name}
           setDay={() => props.onChange(day.name)}
         />

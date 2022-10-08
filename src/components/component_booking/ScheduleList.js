@@ -1,16 +1,12 @@
 import React from "react";
 import Schedule from "./Schedule";
 
-export default function ScheduleList (props) {
-
-  console.log('prpos inside ScheduleList as received', props);
-const bookings = Object.values(props.bookings)
-console.log('schedule after extracting values DayList as received', bookings);
+export default function ScheduleList(props) {
+  const bookings = Object.values(props.bookings)
   const scheduleItem = bookings.map(
-    booking => {
-      return (<li>
+    (booking, index) => {
+      return (<li key={booking.id}>
         <Schedule
-          key={booking.id}
           user={booking.user}
           time={booking.time}
           room={booking.room}
@@ -22,11 +18,11 @@ console.log('schedule after extracting values DayList as received', bookings);
     }
   );
   return (
-      <section className="schedule-list">
-        <h6>
-          {scheduleItem}
-        </h6>
-      </section>
+    <section className="schedule-list">
+      <h6>
+        {scheduleItem}
+      </h6>
+    </section>
   )
 };
 

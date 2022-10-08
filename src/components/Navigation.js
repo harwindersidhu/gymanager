@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Navigation(props) {
   return (
     <nav>
-      
+
       <div className="nav--project-name">GyManager</div>
 
       <div className="nav-bar">

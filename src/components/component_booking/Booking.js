@@ -21,19 +21,19 @@ export default function Booking(props) {
 
   return (
     <>
-    <div className="booking-view">
-      <div className="facility-booking">
-        <div className="days-view">
-          { !state.bookingMode && <DayList days={state.days} onChange={setDay}/> }
-          { !state.bookingMode && <Button  name={"Create Booking"} onChange={createBooking} onSubmit={saveBooking}/>}
-          { state.bookingMode && <Button name={"View Schedule"} onChange={viewSchedule}/>}
+      <div className="booking-view">
+        <div className="facility-booking">
+          <div className="days-view">
+            {!state.bookingMode && <DayList days={state.days} onChange={setDay} />}
+            {!state.bookingMode && <Button name={"Create Booking"} onChange={createBooking} onSubmit={saveBooking} />}
+            {state.bookingMode && <Button name={"View Schedule"} onChange={viewSchedule} />}
+          </div>
+          <div className="schedule-view">
+            {!state.bookingMode && <ScheduleList bookings={state.filteredBookings} onChange={cancelBooking} />}
+            {state.bookingMode && <Form onSubmit={saveBooking} />}
+          </div>
         </div>
-        <div className="schedule-view">
-         { !state.bookingMode && <ScheduleList bookings={state.filteredBookings} onChange={cancelBooking}/>}
-         { state.bookingMode && <Form onSubmit={saveBooking}/>}
-        </div>
-      </div>
-      <BulletinBoard />
+        <BulletinBoard />
       </div>
     </>
   );
