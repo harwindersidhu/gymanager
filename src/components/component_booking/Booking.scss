@@ -80,8 +80,6 @@ button.day-item:hover {
 
 section.schedule-list {
   height: fit-content;
-  
-
 }
 
 .schedule-item {
@@ -198,4 +196,20 @@ button.create-booking:hover {
   font-size: 3vh;
   text-align: center;
   padding: 0.5vh;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: solid;
+  color: #002642;
+  border-color: #002642;
+  width: 87%;
+  height: inherit;
+  margin: 0.35rem;
+  border-radius: 0.5rem;
+  border: 1;
+  padding: 2rem;
+  align-items: center;
 }

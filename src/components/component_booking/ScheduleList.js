@@ -1,7 +1,9 @@
 import React from "react";
 import Schedule from "./Schedule";
+import LandingPage from "./LandingPage";
 
 export default function ScheduleList(props) {
+  if (props.bookings.length !== 0) {
   const bookings = Object.values(props.bookings)
   const scheduleItem = bookings.map(
     (booking, index) => {
@@ -15,8 +17,8 @@ export default function ScheduleList(props) {
         />
       </li>
       )
-    }
-  );
+  }
+)
   return (
     <section className="schedule-list">
       <h6>
@@ -24,6 +26,12 @@ export default function ScheduleList(props) {
       </h6>
     </section>
   )
+  }
+  else 
+  return (
+    <section className="schedule-list">
+      <LandingPage message={"No bookings to show"} />
+      </section>)
 };
 
 

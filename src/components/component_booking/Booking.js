@@ -7,6 +7,7 @@ import DayList from "./DayList";
 import ScheduleList from "./ScheduleList";
 import Button from "./components/Button"
 import Form from "./components/Form";
+import LandingPage from "./LandingPage";
 
 export default function Booking(props) {
 
