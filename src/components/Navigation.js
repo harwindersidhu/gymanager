@@ -9,6 +9,7 @@ export default function Navigation() {
 
   return (
     <nav>
+
       <div className="nav--project-name">GyManager</div>
 
       <div className="nav-bar">

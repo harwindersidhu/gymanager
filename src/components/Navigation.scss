@@ -1,15 +1,15 @@
 nav {
-  // top: 0;
-  position: fixed;
-  width: 100%;
-  height: 120px;
-  background: #801f1f;
+  width: auto;
+  height: 10vh;
+  background: #840032;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding: 1rem;
   color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 7vh;
+
 
   button {
     margin-right: 1.5em;
@@ -17,6 +17,7 @@ nav {
 
   .nav-bar {
     width: 90vw;
+    padding: 1vh;
   }
 
   .nav-bar,
@@ -32,10 +33,36 @@ nav {
       list-style-type: none;
     }
 
+
+    button {
+      width: fit-content;
+      padding: 0.5rem;
+      background-color: #ffffff;
+      border: solid;
+      color: #002642;
+      border-color: #002642;
+      width: 95%;
+      margin: 0.35vw;
+      text-align: center;
+      overflow: auto;
+      border-radius: 0.5rem;
+      border: 1;
+    }
+
+    button:hover {
+      background-color: #e59500;
+    }
+
     li {
-      margin: 1em;
+      margin: 0.5vw;
+      font-size: 1.2rem;
+      color: #ffffff;
 
     }
+
+      a:hover {
+        color: #e59500;
+      }
 
     a {
       text-decoration: none;
@@ -50,4 +77,4 @@ nav {
   // .login--register {
   //   display: none;
   // }
-}
+  }
