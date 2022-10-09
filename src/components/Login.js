@@ -20,38 +20,41 @@ export default function Login(props) {
 
   return (
     <div className="login-form-main-div">
-      <form autoComplete="off" onSubmit={event => event.preventDefault()}>
-        { error !== "" && <div>{error}</div>}
-        <div className="email-div">
-          <label className="email-label">Email: </label>
-          <input
-            className="email-input"
-            name="email"
-            type="email"
-            value={email}
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+      <div className="inner-form-div">
+        <h2>Login</h2>
+        {error !== "" && <div className="login-error">{error}</div>}
+        <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+          <div className="form-group">
+            <label className="email-label">Email: </label>
+            <input
+              className="email-input"
+              name="email"
+              type="email"
+              value={email}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-        <div className="password-div">
-          <label className="password-label">Password: </label>
-          <input
-            className="password-input"
-            name="password"
-            type="password"
-            value={password}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+          <div className="form-group">
+            <label className="password-label">Password: </label>
+            <input
+              className="password-input"
+              name="password"
+              type="password"
+              value={password}
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-      </form>
+        </form>
 
-      <button
-        className="login-form-button"
-        onClick={onLogin}
-      >Login</button>
+        <button
+          className="login-form-button"
+          onClick={onLogin}
+        >Login</button>
+      </div>
     </div>
   );
 }
