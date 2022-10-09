@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navigation.scss"
 import { Link } from "react-router-dom";
+import { loginContext } from "../providers/LoginProvider";
 
+export default function Navigation() {
 
-export default function Navigation(props) {
+  const { user, logout } = useContext(loginContext);
+
   return (
     <nav>
 
@@ -15,14 +18,14 @@ export default function Navigation(props) {
           <li><Link to='/book'>Book</Link></li>
         </ul>
         <div className="nav-bar-right">
-          <div className="login--register">
-            <button>Login</button>
-            <button>Register</button>
-          </div>
-          <div className="login-logout">
-            <label>ADMIN</label>
-            <button>LogOut</button>
-          </div>
+          {user.name !== "" && <div className="login-logout">
+            <label>{user.name}</label>
+            <button onClick={() => logout()}>LogOut</button>
+          </div>}
+          {user.name === "" && <ul className="login--register">
+            <li><Link to='/'>Login</Link></li>
+            <li>Register</li>
+          </ul>}
         </div>
 
       </div>
