@@ -1,15 +1,7 @@
 nav {
-<<<<<<< HEAD
   width: auto;
   height: 10vh;
   background: #840032;
-=======
-  // top: 0;
-  position: fixed;
-  width: 100%;
-  height: 120px;
-  background: #801f1f;
->>>>>>> ac36ac9465c547ec0719e85d66962c79e517e9dc
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,7 +17,7 @@ nav {
 
   .nav-bar {
     width: 90vw;
-    padding: 1vh;;
+    padding: 1vh;
   }
 
   .nav-bar,
@@ -85,4 +77,4 @@ nav {
   // .login--register {
   //   display: none;
   // }
-}
+  }
