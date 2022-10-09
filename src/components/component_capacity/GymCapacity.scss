@@ -8,13 +8,14 @@
   display: flex;
   margin-top: 120px;
   flex-direction: column;
+  justify-content: center;
   width: 65%;
   border: 2px solid black;
 }
 
 .row-one {
   padding: 1.5em;
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
   height: 75%;
 }
 
