@@ -3,6 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #e5dada;
+  font-size: 1.5vw;
+  font-family: 'Roboto', sans-serif;
 }
 
 .inner-form-div {
@@ -31,32 +34,33 @@
     padding: 1em;
   }
 
-  .form-group {
+  .login-form-group {
     display: flex;
     flex-direction: column;
     width: 25vw;
     margin-bottom: 0.5em;
-  }
 
-  input {
-    font-size: medium;
-    border-style: none;
-    display: block;
-    background-color: #f2f1f1;
-    height: 5vh;
-    margin-top: 0.5em;
-    border-radius: 0.3em;
-    transition: 0.4s;
-  }
-
-  input:focus {
-    outline: none;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-  }
+    input {
+      font-size: medium;
+      border-style: none;
+      display: block;
+      background-color: #f2f1f1;
+      height: 5vh;
+      margin-top: 0.5em;
+      border-radius: 0.3em;
+      transition: 0.4s;
+      width: 100%;
+    }
   
-  label {
-    color: #840032;
-    font-size: large;
+    input:focus {
+      outline: none;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      color: #840032;
+      font-size: large;
+    }
   }
 
   button {

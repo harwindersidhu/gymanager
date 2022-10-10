@@ -24,7 +24,7 @@ export default function Login(props) {
         <h2>Login</h2>
         {error !== "" && <div className="login-error">{error}</div>}
         <form autoComplete="off" onSubmit={event => event.preventDefault()}>
-          <div className="form-group">
+          <div className="login-form-group">
             <label className="email-label">Email: </label>
             <input
               className="email-input"
@@ -36,7 +36,7 @@ export default function Login(props) {
             />
           </div>
 
-          <div className="form-group">
+          <div className="login-form-group">
             <label className="password-label">Password: </label>
             <input
               className="password-input"

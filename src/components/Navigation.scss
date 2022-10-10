@@ -1,11 +1,14 @@
 nav {
-  width: auto;
-  height: 10vh;
+  // top: 0;
+  // left: 0;
+  position: fixed;
+  width: 100%;
+  height: 120px;
   background: #840032;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1rem;
+  // padding: 1rem;
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 7vh;
@@ -18,6 +21,10 @@ nav {
   .nav-bar {
     width: 90vw;
     padding: 1vh;
+  }
+
+  .nav--project-name {
+    padding: 1rem;
   }
 
   .nav-bar,
