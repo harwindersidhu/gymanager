@@ -15,9 +15,10 @@ export default function Form(props) {
   return (
     <div className="form-main-div">
       <form autoComplete="off" onSubmit={event => event.preventDefault()}>
-
-        <div className="time-div">
-          <label className="time-label">Time: </label>
+<table>
+  <tbody>
+          <tr>
+            <td><label className="time-label">Time: </label></td>
           {/* <input
             className="time-input"
             name="time"
@@ -26,21 +27,22 @@ export default function Form(props) {
             placeholder="Time"
             onChange={(event) => setTime(event.target.value)}
           /> */}
-          <SelectType value={time} onChange={(val) => setTime(val)} />
-        </div>
-
-        <div className="number-of-people-div">
-          <label className="number-of-people-label">Number Of People Present: </label>
-          <input
+          <td><SelectType value={time} onChange={(val) => setTime(val)} /></td>
+          </tr>
+          <tr>
+            <td>
+          <label className="number-of-people-label">Number Of People Present: </label></td>
+          <td><input
             className="number-of-people-input"
             name="number-of-people"
             type="number"
             value={numberOfPeople}
             placeholder="Number of People"
             onChange={(event) => setNumberOfPeople(event.target.value)}
-          />
-        </div>
-
+          /></td>
+        </tr>
+        </tbody>
+        </table>
       </form>
 
       <button
