@@ -22,9 +22,9 @@
     border-width: 2px;
     border-style: solid;
     align-items: center;
-  
+
   }
-  
+
   button:hover {
     background-color: #e59500;
   }
@@ -34,10 +34,13 @@
   // height: 80%;
   overflow-y: scroll;
 }
+
 .bulletin {
   margin: 20px 20px;
-  padding: 0.5em;
-  border: 4px solid #545149;
+  // padding: 0.5em;
+  border: 1px solid #002642;
+  color: #002642;
+  border-radius: 0.5rem;
 }
 
 .bulletin:hover {
@@ -46,17 +49,28 @@
   box-shadow: 8px 8px 0px 0px rgba(197, 203, 227, 1);
 }
 
-.bulletin--heading {
-  margin: 0;
+.bulletin--header {
+  background-color: #840032;
+  color: #ffffff;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5em;
+
+  h2 {
+    padding: 0.5rem;
+    margin: 0;
+  }
 }
 
 .bulletin--body {
   word-wrap: break-word;
+  padding: 0.5em;
+  font-size: medium;
 }
 
 .bulletin--footer {
+  padding: 0.5em;
   padding-top: 0.5em;
-  border-top: 4px solid #545149;
+  border-top: 2px solid #002642;
   overflow: hidden;
   font-size: 0.5em;
 
@@ -71,14 +85,6 @@
     width: 5rem;
   }
 }
-
-// .bulletin-form-main-div {
-//   border: 2px solid black;
-//   padding: 0.5em;
-//   margin: 20px 20px;
-//   height: 20%;
-//   // display: none;
-// }
 
 .bulletin-form-main-div {
   display: flex;
@@ -103,12 +109,13 @@
     margin-top: 0.25em;
   }
 
-  input, textarea {
-    width:15vw;
+  input,
+  textarea {
+    width: 15vw;
     height: 2vw;
     margin-top: 0.5em;
   }
-  
+
   label {
     font-size: large;
   }
