@@ -30,7 +30,7 @@ export default function ScheduleList(props) {
   else 
   return (
     <section className="schedule-list">
-      <LandingPage message={"No bookings to show"} />
+      <LandingPage message={"No bookings to show to show for " + props.day } />
       </section>)
 };
 

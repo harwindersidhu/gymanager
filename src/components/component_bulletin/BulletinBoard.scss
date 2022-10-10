@@ -3,7 +3,7 @@
   width: 35%;
   // padding-left: 1.5em;
   // padding-right: 1.5em;
-  border: 2px solid black;
+  border-left: 2px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -103,15 +103,13 @@
   form {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
     font-size: 1vh;
-    margin-top: 0.25em;
   }
 
   input,
   textarea {
-    width: 15vw;
+    width: 25vw;
     height: 2vw;
     margin-top: 0.5em;
   }

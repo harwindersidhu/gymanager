@@ -16,30 +16,36 @@ export default function BulletinForm() {
   return (
     <div className="bulletin-form-main-div">
       <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+      <table>
+      <tbody>
+        <tr>
+          
 
-        <div className="bulletin-form-title-div">
-          <label className="bulletin-form-time-label">Title: </label>
-          <input
+          <td><label className="bulletin-form-time-label">Title: </label></td>
+          <td><input
             className="bulletin-form-title-input"
             name="title"
             type="text"
             value={title}
             placeholder="Title"
             onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
+          /></td>
 
-        <div className="description-div">
-          <label className="description-label">Description </label>
-          <textarea
+        </tr>
+        <tr>
+      
+          <td><label className="description-label">Description </label></td>
+          <td><textarea
             className="description-textarea"
             name="description"
             value={description}
             placeholder="Description"
             onChange={(e) => setDescription(e.target.value)}>
-          </textarea>
-        </div>
-
+          </textarea></td>
+  
+        </tr>
+        </tbody>
+        </table>
       </form>
 
       <button
