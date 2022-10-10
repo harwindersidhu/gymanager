@@ -1,5 +1,6 @@
 {
   "name": "gymanager",
+  "proxy": "http://localhost:8080",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.36.1",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "timeago.js": "^4.0.2",
@@ -42,6 +44,5 @@
   },
   "devDependencies": {
     "sass": "^1.55.0"
-  },
-  "proxy": "http://localhost:8080"
+  }
 }
