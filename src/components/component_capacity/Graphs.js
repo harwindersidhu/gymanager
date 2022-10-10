@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GraphPresentDay from "./GraphpresentDay";
 import GraphPresentHour from "./GraphPresentHour";
 import "./Graphs.scss";
