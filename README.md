@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# GyManager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GyManager front-end is a facility management app with the following few core features at the moment:
 
-## Available Scripts
+# Access Levels
 
-In the project directory, you can run:
+GyManager has follwing interfaces with custmozied access as follows:
 
-### `npm start`
+## Admin: 
+Can read/write bookings
+Can read/write posts to the bulletin board
+Can read/write capaity informtaion to the database
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## User
+Can read/write bookings
+Can read posts from the bulletin board
+Can read capaity informtaion from the database
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+GyManager makes use of the follwing tech stack:
 
-### `npm test`
+Front-end: React, Bootstrap, HTML, CSS
+Back-end: NodeJS, Express
+Database: PostgreSQL
+Additional: CORS, XSS, helmet, cookie-parser, morgan, useForm, useContext, timeago, nodemon
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ clone back-end from: [`https://github.com/ZaSal1990/gymanager_api`]
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Run Project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ run `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ Login as admin:
+ username: `abc@admin.com`
+ password: `admin`
 
-### `npm run eject`
+Login as user:
+username: `abc@user.com`
+password: `user`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# User Stories
+ 
+ As a user, I can select a day and view bookings for the day
+ As a user, I can create booking for the user
+ As a user, I can view posts on bulletin board
+ As a user, I can see gym capacity for the time/day selected
+ As an admin, I can post to bulletin board
+ As an admin, I can add current capacity level of the gym
+ As an admin I can 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
