@@ -20,7 +20,7 @@ export default function Navigation() {
         <div className="nav-bar-right">
           {user.name !== "" && <div className="login-logout">
             <label>{user.name}</label>
-            <button onClick={() => logout()}>LogOut</button>
+            <button onClick={() => logout()}>Logout</button>
           </div>}
           {user.name === "" && <ul className="login--register">
             <li><Link to='/'>Login</Link></li>

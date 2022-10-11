@@ -9,7 +9,7 @@
   justify-content: space-between;
 
   button {
-    background-color: #840032;
+    background-color: #4E4F50;
     color: #ffffff;
     padding: 0.5rem;
     margin-top: 0.5em;
@@ -27,6 +27,10 @@
 
   button:hover {
     background-color: #e59500;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    
   }
 }
 
@@ -50,12 +54,13 @@
 }
 
 .bulletin--header {
-  background-color: #840032;
+  background-color: #444444;
   color: #ffffff;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5em;
 
   h2 {
+    font-size: medium;
     padding: 0.5rem;
     margin: 0;
   }
@@ -80,6 +85,7 @@
 
   button {
     float: right;
+    background-color: #4E4F50;
     margin-top: 0em;
     font-size: 0.8rem;
     width: 5rem;

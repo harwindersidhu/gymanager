@@ -19,8 +19,6 @@ export default function BulletinForm() {
       <table>
       <tbody>
         <tr>
-          
-
           <td><label className="bulletin-form-time-label">Title: </label></td>
           <td><input
             className="bulletin-form-title-input"

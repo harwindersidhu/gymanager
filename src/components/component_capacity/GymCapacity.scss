@@ -1,6 +1,6 @@
 .capacity-view {
   display: flex;
-  background-color: #e5dada;
+  background-color: #F9F6F0;
   font-size: 1.5vw;
   font-family: 'Roboto', sans-serif;
 }
@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: center;
   width: 65%;
-  border: 2px solid black;
+ 
 }
 
 .row-one {
@@ -49,6 +49,10 @@
     margin-top: 0.25em;
   }
 
+ .form-button {
+    background-color: #4E4F50;
+  }
+
   input, select {
     width:30vw;
     height: 2vw;
@@ -71,7 +75,7 @@
   }
 
   button {
-    background-color: #840032;
+    background-color: #4E4F50;
     color: #ffffff;
     padding: 0.5rem;
     // margin: 0.5rem;
@@ -90,5 +94,8 @@
   
   button:hover {
     background-color: #e59500;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
   }
 }

@@ -23,7 +23,6 @@ function App() {
             <Route path='/book' element={<Booking />} />
           </Routes>
         </BulletinBoardProvider>}
-
       </div>
     </BrowserRouter>
   );

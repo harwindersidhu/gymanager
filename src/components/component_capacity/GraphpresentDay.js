@@ -18,6 +18,7 @@ ChartJS.register(
   Legend
 );
 
+
 export default function GraphPresentDay(props) {
 
   const data = {
@@ -27,10 +28,10 @@ export default function GraphPresentDay(props) {
         label: 'number of people present',
         data: props.data,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)'
+          'rgba(229,149,0)'
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)'
+          'rgba(229,149,0)'
         ],
         borderWidth: 1
       }

@@ -3,7 +3,7 @@
 .booking-view {
   display: flex;
   align-items: stretch;
-  background-color: #e5dada;
+  background-color: #F9F6F0;
   font-size: 1.5vw;
   font-family: 'Roboto', sans-serif;
   justify-content: space-between;
@@ -25,7 +25,7 @@
 }
 
 .schedule-view {
-  background-color: #e5dada;
+  background-color: #F9F6F0;
   width: 80%;
   height: inherit;
   overflow: auto;
@@ -38,7 +38,7 @@ height: fit-content;
 }
 
 button.large {
-  background-color: #840032;
+  background-color: #444444;
   color: #ffffff;
   padding: 0.25vw;
   margin: 0.25vw;
@@ -55,17 +55,21 @@ button.large {
 
 button.large:hover {
   background-color: #e59500;
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
 }
 
 
 button.day-item {
-  background-color: #002642;
+  background-color: #13232e;
   color: #ffffff;
   padding: 0.25vw;
   margin: 0.25vw;
   text-align: center;
   border-radius: 0.5rem;
   border: 0;
+  border-color: #000000;
   font-size: 1.5vw;
   height: 5vw;
   width: 20vw;
@@ -74,8 +78,12 @@ button.day-item {
   align-items: center;
 }
 
+
 button.day-item:hover {
   background-color: #e59500;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
 
 }
 
@@ -97,8 +105,15 @@ section.schedule-list {
   
 }
 
+.schedule-item:hover {
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+
+}
+
 h3 {
-  color: #840032;
+  color: #101e27;
   margin: 0.5vw;
 }
 
@@ -107,7 +122,7 @@ p {
 }
 
 button.schedule-item.cancel {
-  background-color: #840032;
+  background-color: #4E4F50;
   color: #ffffff;
   width: fit-content;
   padding: 0.5rem;
@@ -116,6 +131,9 @@ button.schedule-item.cancel {
 
 button.schedule-item:hover {
   background-color: #e59500;
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
 
 }
 
@@ -171,7 +189,7 @@ label {
 }
 
 button.create-booking {
-  background-color: #840032;
+  background-color: #4E4F50;
   color: #ffffff;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -190,6 +208,9 @@ button.create-booking {
 
 button.create-booking:hover {
   background-color: #e59500;
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+  box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
 }
 
 .error {

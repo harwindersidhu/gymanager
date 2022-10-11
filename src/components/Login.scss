@@ -1,15 +1,17 @@
 .login-form-main-div {
   display: flex;
+ 
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #e5dada;
+  background-image: url('../background.jpeg');
   font-size: 1.5vw;
   font-family: 'Roboto', sans-serif;
 }
 
 .inner-form-div {
   display: flex;
+  opacity: 0.8;
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
@@ -21,7 +23,7 @@
   align-items: center;
 
   h2 {
-    color: #840032;
+    color: #000000;
   }
 
   form {
@@ -58,13 +60,13 @@
     }
 
     label {
-      color: #840032;
+      color: #000000;
       font-size: large;
     }
   }
 
   button {
-    background-color: #840032;
+    background-color: #4E4F50;
     color: #ffffff;
     padding: 0.5rem;
     // margin: 0.5rem;
@@ -82,6 +84,9 @@
   
   button:hover {
     background-color: #e59500;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
+    box-shadow: 2px 2px 0px 0px rgba(197, 203, 227, 1);
   }
 
   .login-error {
