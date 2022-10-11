@@ -20,7 +20,8 @@ export default function ContactForm() {
       message
     };
 
-    emailjs.send('service_15zq2s9', 'template_8gsv9ck', emailParams, 'mggdG_ysythJNqVbw')
+    console.log("Email send: ", email, message, name, process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+    emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, emailParams, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         setResponseMessage("Thanks for contacting us. We will be back to you soon.");
