@@ -3,6 +3,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #F9F6F0;
+  font-size: 1.5vw;
+  font-family: 'Roboto', sans-serif;
 }
 
 .map-div {
@@ -24,9 +27,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #e5dada;
-  font-size: 1.5vw;
-  font-family: 'Roboto', sans-serif;
+  background-image: url('../../background.jpeg');
 }
 
 .contact-inner-form-div {
@@ -40,10 +41,7 @@
   border-radius: 0.5rem;
   border: 1;
   align-items: center;
-
-  h2 {
-    color: #840032;
-  }
+  opacity: 0.9;
 
   form {
     display: flex;
@@ -65,7 +63,7 @@
       font-size: medium;
       border-style: none;
       display: block;
-      background-color: #f2f1f1;
+      background-color: #d3cccc;
       height: 5vh;
       margin-top: 0.5em;
       border-radius: 0.3em;
@@ -83,13 +81,12 @@
     }
 
     label {
-      color: #840032;
       font-size: large;
     }
   }
 
   button {
-    background-color: #840032;
+    background-color: #4E4F50;
     color: #ffffff;
     padding: 0.5rem;
     margin-top: 0.5em;

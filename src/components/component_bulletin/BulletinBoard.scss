@@ -1,8 +1,6 @@
 .bulletin-board {
   margin-top: 120px;
   width: 35%;
-  // padding-left: 1.5em;
-  // padding-right: 1.5em;
   border-left: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -113,9 +111,9 @@
     font-size: 1vh;
   }
 
-  input,
-  textarea {
-    width: 25vw;
+  .bulletin-form-title-input,
+  .description-textarea {
+    width: 22vw;
     height: 2vw;
     margin-top: 0.5em;
   }
