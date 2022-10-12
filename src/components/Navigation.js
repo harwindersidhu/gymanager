@@ -16,6 +16,7 @@ export default function Navigation() {
         <ul className="nav-bar-left">
           <li><Link to='/'>Gym Capacity</Link></li>
           <li><Link to='/book'>Book</Link></li>
+          <li><Link to='/contact'>Contact Us</Link></li>
         </ul>
         <div className="nav-bar-right">
           {user.name !== "" && <div className="login-logout">

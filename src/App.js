@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BulletinBoardProvider from './providers/BulletinBoardProvider';
 import Login from './components/Login';
 import { loginContext } from './providers/LoginProvider';
+import ContactUs from './components/component_contact/ContactUs';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path='/' element={<GymCapacity />} />
             <Route path='/book' element={<Booking />} />
+            <Route path='/contact' element={<ContactUs />} />
           </Routes>
         </BulletinBoardProvider>}
       </div>
