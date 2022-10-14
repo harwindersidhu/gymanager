@@ -8,6 +8,7 @@ import BulletinBoardProvider from './providers/BulletinBoardProvider';
 import Login from './components/Login';
 import { loginContext } from './providers/LoginProvider';
 import ContactUs from './components/component_contact/ContactUs';
+import Register from './components/Register';
 
 function App() {
 
@@ -17,14 +18,18 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navigation />
-        {user.email === "" && <Login />}
-        {user.email !== "" && <BulletinBoardProvider>
+        {/* {user.email === "" && <Login />}
+        {user.email !== "" && <BulletinBoardProvider> */}
+        <BulletinBoardProvider>
           <Routes>
-            <Route path='/' element={<GymCapacity />} />
-            <Route path='/book' element={<Booking />} />
-            <Route path='/contact' element={<ContactUs />} />
+          <Route path='/register' element={<Register />} />
+            {user.email === "" && <Route path='/' element={<Login />} />}
+            
+            {user.email !== "" && <Route path='/' element={<GymCapacity />} />}
+            {user.email !== "" && <Route path='/book' element={<Booking />} />}
+            {user.email !== "" && <Route path='/contact' element={<ContactUs />} />}
           </Routes>
-        </BulletinBoardProvider>}
+        </BulletinBoardProvider>
       </div>
     </BrowserRouter>
   );

@@ -42,7 +42,7 @@ export default function useGraphData() {
             return dataObj;
           })
         }
-
+        
       }
     })
       .catch((e) => {

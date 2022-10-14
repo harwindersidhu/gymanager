@@ -36,7 +36,7 @@ export default function BulletinBoardProvider(props) {
   }, []);
 
   function saveBulletin(title, description) {
-console.log('we were in savebulletin', title, description)
+    console.log('we were in savebulletin', title, description)
     const bulletinData = {
       title: title,
       description: description,
