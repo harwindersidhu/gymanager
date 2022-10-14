@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Booking.scss";
 import BulletinBoard from "../component_bulletin/BulletinBoard";
 import useApplicationData from "../hooks/useApplicationData"
-
+import { loginContext } from "../../providers/LoginProvider";
 import DayList from "./DayList";
 import ScheduleList from "./ScheduleList";
 import Button from "./components/Button"
 import Form from "./components/Form";
-
+import { Navigate } from "react-router-dom";
 
 export default function Booking(props) {
 
@@ -19,6 +19,12 @@ export default function Booking(props) {
     saveBooking,
     viewSchedule
   } = useApplicationData();
+
+  const { user } = useContext(loginContext);
+
+  if (user.email === "") {
+    return <Navigate to="/login" />
+  }
 
   return (
     <>

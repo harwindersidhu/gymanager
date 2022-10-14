@@ -24,7 +24,7 @@ export default function Navigation() {
             <button onClick={() => logout()}>Logout</button>
           </div>}
           {user.name === "" && <ul className="login--register">
-            <li><Link to='/'>Login</Link></li>
+            <li><Link to='/login'>Login</Link></li>
             <li><Link to='/register'>Register</Link></li>
           </ul>}
         </div>

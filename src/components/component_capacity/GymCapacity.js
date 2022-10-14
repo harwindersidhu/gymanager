@@ -5,10 +5,15 @@ import Graphs from "./Graphs";
 import Form from "./Form";
 import useGraphData from "../../hooks/useGraphData";
 import { loginContext } from "../../providers/LoginProvider";
+import { Navigate } from "react-router-dom";
 
-export default function GymCapacity(props) {
+export default function GymCapacity() {
   const { date, setDate, presentHourData, presentDayData, saveCapacity } = useGraphData();
   const { user } = useContext(loginContext);
+
+  if (user.email === "") {
+    return <Navigate to="/login" />
+  }
 
   return (
     <div className="capacity-view">

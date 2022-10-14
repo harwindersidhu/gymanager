@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Navigate } from "react-router";
 import { loginContext } from "../providers/LoginProvider";
 import "./Login.scss";
 
@@ -6,7 +7,7 @@ export default function Login(props) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, error, setError } = useContext(loginContext);
+  const { user, login, error, setError } = useContext(loginContext);
 
   function onLogin() {
     if (email === "" || password === "") {
@@ -16,6 +17,10 @@ export default function Login(props) {
     login(email, password);
     setEmail("");
     setPassword("");
+  }
+
+  if (user.email !== "") {
+    return <Navigate to="/" />
   }
 
   return (

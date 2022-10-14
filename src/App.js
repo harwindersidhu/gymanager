@@ -12,8 +12,6 @@ import Register from './components/Register';
 
 function App() {
 
-  const { user } = useContext(loginContext);
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,12 +20,11 @@ function App() {
         {user.email !== "" && <BulletinBoardProvider> */}
         <BulletinBoardProvider>
           <Routes>
-          <Route path='/register' element={<Register />} />
-            {user.email === "" && <Route path='/' element={<Login />} />}
-            
-            {user.email !== "" && <Route path='/' element={<GymCapacity />} />}
-            {user.email !== "" && <Route path='/book' element={<Booking />} />}
-            {user.email !== "" && <Route path='/contact' element={<ContactUs />} />}
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/' element={<GymCapacity />} />
+            <Route path='/book' element={<Booking />} />
+            <Route path='/contact' element={<ContactUs />} />
           </Routes>
         </BulletinBoardProvider>
       </div>
