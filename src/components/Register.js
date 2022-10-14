@@ -8,7 +8,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("user");
   const [error, setError] = useState("");
   // const { login, error, setError } = useContext(loginContext);
 
