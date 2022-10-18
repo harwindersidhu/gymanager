@@ -34,7 +34,7 @@ export default function LoginProvider(props) {
         navigate("/login");
       })
       .catch((e) => {
-        console.log("Error while saving capacity: ", e);
+        console.log("Error while saving user: ", e);
         setError("Error while register. Please try again!");
       });
   } 
@@ -50,7 +50,7 @@ export default function LoginProvider(props) {
         }
       })
       .catch((e) => {
-        console.log("Error while saving bulletin: ", e);
+        console.log("Error while getting user: ", e);
         setError("Error while login. Please try again!");
       });
   }
