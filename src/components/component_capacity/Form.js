@@ -3,13 +3,13 @@ import SelectType from "./SelectType";
 
 export default function Form(props) {
 
-  const [time, setTime] = useState("");
-  const [numberOfPeople, setNumberOfPeople] = useState("");
+  const [time, setTime] = useState("7am");
+  const [numberOfPeople, setNumberOfPeople] = useState(0);
 
   function saveCapacityData() {
     props.onSave(time, numberOfPeople);
     setTime("7am");
-    setNumberOfPeople("");
+    setNumberOfPeople(0);
   }
 
   return (
