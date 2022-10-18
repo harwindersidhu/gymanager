@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { loginContext } from "../providers/LoginProvider";
 import "./Register.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
 
@@ -9,8 +10,8 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [status, setStatus] = useState("user");
-  const [error, setError] = useState("");
-  // const { login, error, setError } = useContext(loginContext);
+  const { signUp, error, setError } = useContext(loginContext);
+  const navigate = useNavigate();
 
   function onRegister() {
     if (email === "" || password === "" || confirmPassword === "" || status === "" || name === "") {
@@ -20,12 +21,12 @@ export default function Register() {
       setError("Passwords doesn't match.");
       return;
     }
-    //login(email, password);
-    console.log("Register: ", name, email, password, status);
+    signUp(name, email, password, status, navigate);
     setEmail("");
     setPassword("");
     setName("");
     setConfirmPassword("");
+    setError("");
   }
 
   return (

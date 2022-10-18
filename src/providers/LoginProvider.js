@@ -15,6 +15,30 @@ export default function LoginProvider(props) {
 
   const [error, setError] = useState("");
 
+  function signUp(username, email, password, status, navigate) {
+
+    let signUpApi = "/api/user";
+    if (status === "admin") {
+      signUpApi = "/api/admin"
+    } 
+    const userInfo = {
+      username,
+      email,
+      password
+    }
+
+    return axios.post(signUpApi, userInfo)
+      .then((response) => {
+        console.log("Response from saving user: ", response.data.success);
+        setError("");
+        navigate("/login");
+      })
+      .catch((e) => {
+        console.log("Error while saving capacity: ", e);
+        setError("Error while register. Please try again!");
+      });
+  } 
+
   function login(email, password) {
     return axios.get(`/api/user/${email}/${password}`)
       .then((response) => {
@@ -25,7 +49,10 @@ export default function LoginProvider(props) {
           setError("User not found");
         }
       })
-      .catch((e) => console.log("Error while saving bulletin: ", e));
+      .catch((e) => {
+        console.log("Error while saving bulletin: ", e);
+        setError("Error while login. Please try again!");
+      });
   }
 
   function logout() {
@@ -43,7 +70,8 @@ export default function LoginProvider(props) {
     error,
     login,
     logout,
-    setError
+    setError,
+    signUp
   };
 
   return (
