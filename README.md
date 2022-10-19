@@ -46,6 +46,34 @@ password: `user`
  As a user, I can see gym capacity for the time/day selected
  As an admin, I can post to bulletin board
  As an admin, I can add current capacity level of the gym
- As an admin I can 
+ As an admin I can
+
+ # Screenshots
+
+- We can register as a user or an admin.
+  - !["register"](./docs/register.png)
+
+- We can log in as a user or an admin. As an admin, we can fill out a bulletin form and a capacity form. As a user, we can not edit capacity graphs or post bulletins. We can only view them.
+  - !["login"](./docs/login.png)
+
+- We can see two graphs. The doughnut graph shows the capacity level of the present hour. We can select any date and can see the capacity level for that whole day on the Bar graph. On the right-hand side is the bulletin board.
+  - !["capacity"](./docs/capacity.png)
+
+- We can book a facility room for any specific day or time of the week. We can cancel the booking as well. 
+  - !["book"](./docs/book.png) 
+
+- On the contact us page, a user fill out the form to send any message to the admin. On the right is a google map to show the location of our facility. 
+  - !["contact_us"](./docs/contact_us.png) 
 
 
+# Dependencies
+
+- ReactJS
+- Axios
+- Node.js
+- react-chartjs-2
+- emailjs
+- react-google-maps
+- useContext
+- React Router
+- hooks
