@@ -23,7 +23,7 @@ Back-end: NodeJS, Express
 Database: PostgreSQL
 Additional: CORS, XSS, helmet, cookie-parser, morgan, useForm, useContext, timeago, nodemon
 
- clone back-end from: [`https://github.com/ZaSal1990/gymanager_api`]
+ clone back-end from: <https://github.com/ZaSal1990/gymanager_api`>
 
 
 # Run Project
