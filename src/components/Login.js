@@ -9,6 +9,10 @@ export default function Login(props) {
   const [password, setPassword] = useState("");
   const { user, login, error, setError } = useContext(loginContext);
 
+  /**
+   * This function will first check if both fields are filled.
+   * Then it will call login function and will set field values empty
+   */
   function onLogin() {
     if (email === "" || password === "") {
       setError("Fields can't be empty.");
@@ -19,6 +23,7 @@ export default function Login(props) {
     setPassword("");
   }
 
+  // If user is not nill, it will navigate to home page i.e Capacity page.
   if (user.email !== "") {
     return <Navigate to="/" />
   }

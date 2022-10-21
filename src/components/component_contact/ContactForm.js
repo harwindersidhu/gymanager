@@ -9,6 +9,9 @@ export default function ContactForm() {
   const [error, setError] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
 
+  /**
+   * If all fields are not empty, it will call emailjs api to send email to admin
+   */
   function onSubmit() {
     if (email === "" || message === "" || name === "") {
       setError("Fields can't be empty.");
@@ -20,7 +23,6 @@ export default function ContactForm() {
       message
     };
 
-    console.log("Email send: ", email, message, name, process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
     emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, emailParams, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);

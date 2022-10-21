@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Bulletin from "./Bulletin";
 import BulletinForm from "./BulletinForm";
 import "./BulletinBoard.scss";
-//import useBulletinBoardData from "../../hooks/useBulletinBoardData";
 import { format } from 'timeago.js';
 
 import { bulletinBoardContext } from "../../providers/BulletinBoardProvider";

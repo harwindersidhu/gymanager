@@ -15,6 +15,16 @@ export default function LoginProvider(props) {
 
   const [error, setError] = useState("");
 
+  /**
+   * 
+   * @param {*} username 
+   * @param {*} email 
+   * @param {*} password 
+   * @param {*} status admin or user
+   * @param {*} navigate 
+   * @returns This function call api to create user. If success it will navigate to login page,
+   * if error, it will set the error which will be shown on register page.
+   */
   function signUp(username, email, password, status, navigate) {
 
     let signUpApi = "/api/user";
@@ -39,6 +49,13 @@ export default function LoginProvider(props) {
       });
   } 
 
+  /**
+   * 
+   * @param {*} email 
+   * @param {*} password 
+   * @returns This function call api to verify user, if user exists it will set the user with returned values (id, name, email, password, isadmin).
+   * If user doesn't exist, it will set error that User not found.
+   */
   function login(email, password) {
     return axios.get(`/api/user/${email}/${password}`)
       .then((response) => {
@@ -55,6 +72,9 @@ export default function LoginProvider(props) {
       });
   }
 
+  /**
+   * This function is called when logout button is pressed. It will set user object with all keys equal to ""
+   */
   function logout() {
     setUser({
       "id": "",

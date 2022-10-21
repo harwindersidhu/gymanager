@@ -13,6 +13,10 @@ export default function Register() {
   const { signUp, error, setError } = useContext(loginContext);
   const navigate = useNavigate();
 
+  /**
+   * This function will check if all fields are filled, then will check if password matches.
+   * Then it will call signUp function and will set all the fields empty.
+   */
   function onRegister() {
     if (email === "" || password === "" || confirmPassword === "" || status === "" || name === "") {
       setError("Fields can't be empty.");

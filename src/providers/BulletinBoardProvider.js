@@ -5,6 +5,10 @@ export const bulletinBoardContext = createContext();
 
 export default function BulletinBoardProvider(props) {
 
+  /**
+   * 
+   * @returns This function gets present date in the format "yyyy-mm-dd hh:min:sec"
+   */
   function todayDate() {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -22,6 +26,9 @@ export default function BulletinBoardProvider(props) {
 
   const [bulletinData, setBulletinData] = useState([]);
 
+  /**
+   * Bulletin board api is called to get all active bulletins.
+   */
   useEffect(() => {
     const getBulletinData = `/api/bulletinboard`;
 
@@ -35,8 +42,13 @@ export default function BulletinBoardProvider(props) {
       })
   }, []);
 
+  /**
+   * This function implement the post api to save bulletin in database and updates the bulletinData array with new bulletin
+   * @param {*} title title of bulletin
+   * @param {*} description description in detail of bulletin
+   * @returns updated bulletinData array
+   */
   function saveBulletin(title, description) {
-    console.log('we were in savebulletin', title, description)
     const bulletinData = {
       title: title,
       description: description,
@@ -54,6 +66,12 @@ export default function BulletinBoardProvider(props) {
       .catch((e) => console.log("Error while saving bulletin: ", e));
   }
 
+  /**
+   * When admin click delete button of bulletin, it sets the status of bulletin as inActive and therefore it will not show on bulletin board
+   * @param {*} id id of bulletin whose status has to be updated
+   * @param {*} index index of bulletin in bulletinData array
+   * @returns 
+   */
   function editStatusOfBulletin(id, index) {
     const bulletinId = {
       id: id
